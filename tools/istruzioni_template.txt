@@ -1,0 +1,28 @@
+Template pwntools ↔ radare2
+===========================
+
+Questo template è stato creato da greyhat00 per collegare pwntools a radare2
+senza usare GDB/Pwndbg. Serve come punto di partenza per exploit locali o remoti.
+
+Caratteristiche principali:
+- Avvia il processo locale o remoto con pwntools.
+- Se usi l'opzione R2, apre radare2 in un nuovo terminale collegato al processo.
+- Breakpoint e comandi di radare2 personalizzabili modificando r2_cmd.
+
+Come usare:
+1. Passa questo template a pwninit:
+   pwninit --template-path template_pwn2radare.py
+
+2. Avvia il tuo exploit:
+   python3 exploit.py R2           # Avvia locale + radare2
+   python3 exploit.py REMOTE IP PORT  # Connetti a host remoto
+
+3. Modifica r2_cmd per breakpoints o dump di memoria:
+   r2_cmd = "r2 -c 'db sym.main; dc; Vpp' -d " + str(io.pid)
+
+4. Scrivi il tuo payload e interagisci con il processo:
+   payload = [32889, 32895, 32873, 32875]
+   io.sendline(b''.join([chr(i ^ 0x800A).encode() for i in payload]))
+   io.interactive()
+
+Nota: template libero da usare per imparare e sperimentare. Happy pwn!
