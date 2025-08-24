@@ -1,3 +1,10 @@
+<p align="center">
+  🌐 Language: 
+  <a href="README.md">🇮🇹 Italiano</a> | 
+  <a href="README.en.md">🇬🇧 English</a>
+</p>
+
+
 # 🚩 CTF Writeups - GreyHat's pwn writeups.
 
 > - Qui raccolgo tutto quello che combino durante le **CTF** in team e singleplayer: writeup, exploit, pony.  
